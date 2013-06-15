@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{90CEDDB6-32C4-49BD-AAC5-CE03E533BFDD}</ProjectGuid>
+    <RootNamespace>OpenMesh</RootNamespace>
+    <Keyword>ManagedCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_USE_MATH_DEFINES;WIN32;_LIB;_DEBUG;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>..\lib\OpenMeshD.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_USE_MATH_DEFINES;WIN32;_LIB;NDEBUG;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>..\lib\OpenMesh.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Core\IO\reader\PLYReader.cc" />
+    <ClCompile Include="Core\IO\writer\PLYWriter.cc" />
+    <ClCompile Include="Core\Mesh\ArrayKernel.cc" />
+    <ClCompile Include="Core\Mesh\ArrayKernelT.cc" />
+    <ClCompile Include="Core\Mesh\BaseKernel.cc" />
+    <ClCompile Include="Core\Mesh\PolyConnectivity.cc" />
+    <ClCompile Include="Core\Mesh\PolyMeshT.cc" />
+    <ClCompile Include="Core\Mesh\TriConnectivity.cc" />
+    <ClCompile Include="Core\Utils\BaseProperty.cc" />
+    <ClCompile Include="Core\Io\reader\BaseReader.cc" />
+    <ClCompile Include="Core\Io\writer\BaseWriter.cc" />
+    <ClCompile Include="Core\Io\BinaryHelper.cc" />
+    <ClCompile Include="Core\Utils\Endian.cc" />
+    <ClCompile Include="Tools\Utils\getopt.cc" />
+    <ClCompile Include="Core\Io\IOManager.cc" />
+    <ClCompile Include="Core\Io\reader\OBJReader.cc" />
+    <ClCompile Include="Core\Io\writer\OBJWriter.cc" />
+    <ClCompile Include="Core\Io\reader\OFFReader.cc" />
+    <ClCompile Include="Core\Io\writer\OFFWriter.cc" />
+    <ClCompile Include="Core\Io\OMFormat.cc" />
+    <ClCompile Include="Core\Io\reader\OMReader.cc" />
+    <ClCompile Include="Core\System\omstream.cc" />
+    <ClCompile Include="Core\Io\writer\OMWriter.cc" />
+    <ClCompile Include="Tools\Utils\Progress.cc" />
+    <ClCompile Include="Core\Io\reader\STLReader.cc" />
+    <ClCompile Include="Core\Io\writer\STLWriter.cc" />
+    <ClCompile Include="Tools\Utils\StripifierT.cc" />
+    <ClCompile Include="Tools\Utils\Timer.cc" />
+    <ClCompile Include="Core\Mesh\TriMeshT.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\IO\reader\PLYReader.hh" />
+    <None Include="Core\IO\writer\PLYWriter.hh" />
+    <None Include="Core\Mesh\ArrayKernel.hh" />
+    <None Include="Core\Mesh\BaseKernel.hh" />
+    <None Include="Core\Mesh\Kernels\ArrayKernel\ArrayItems.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Mesh\Kernels\ArrayKernel\ArrayKernelT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Mesh\Kernels\Common\AttribKernelT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Attributes\Attributes.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Utils\AutoPropertyHandleT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\exporter\BaseExporter.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\importer\BaseImporter.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Mesh\BaseMesh.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\reader\BaseReader.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\writer\BaseWriter.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\BinaryHelper.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Mesh\Iterators\CirculatorsT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Decimater\CollapseInfoT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Utils\color_cast.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\System\compiler.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\System\config.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Decimater\DecimaterT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Utils\Endian.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\exporter\ExporterT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Mesh\Kernels\Common\FinalMeshItemsT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Utils\GenProg.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Utils\GLConstAsString.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Mesh\Kernels\Common\Handles.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Utils\HeapT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\importer\ImporterT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\IOInstances.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\IOManager.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Mesh\Iterators\IteratorsT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Smoother\JacobiLaplaceSmootherT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Smoother\LaplaceSmootherT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Math\LoopSchemeMaskT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Math\MathDefs.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Utils\MeshCheckerT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\MeshIO.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Decimater\ModBaseT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Decimater\ModIndependentSetsT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Decimater\ModNormalFlippingT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Decimater\ModProgMeshT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Decimater\ModQuadricT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Decimater\ModRoundnessT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\System\mostream.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Utils\Noncopyable.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\reader\OBJReader.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\writer\OBJWriter.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\OFFFormat.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\reader\OFFReader.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\writer\OFFWriter.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\OMFormat.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\reader\OMReader.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\System\omstream.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\writer\OMWriter.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\Options.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Mesh\Types\PolyMesh_ArrayKernelT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Mesh\PolyMeshT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Mesh\PolyMeshT_assign.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Utils\Progress.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Utils\Property.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Geometry\QuadricT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Utils\SingletonT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Smoother\smooth_mesh.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Smoother\SmootherT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\SR_binary.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\SR_binary_spec.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\SR_rbo.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\SR_store.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\SR_types.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Attributes\Status.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\reader\STLReader.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\writer\STLWriter.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Io\StoreRestore.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Utils\StripifierT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Tools\Utils\Timer.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Mesh\Traits.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Mesh\Types\TriMesh_ArrayKernelT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Mesh\TriMeshT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Utils\vector_cast.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Utils\vector_traits.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Math\VectorT.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+    <None Include="Core\Math\VectorT_inc.hh">
+      <FileType>CppHeader</FileType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
