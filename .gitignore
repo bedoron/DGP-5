@@ -1,0 +1,13 @@
+*.sdf
+
+Release/
+!Release/glut*
+
+Debug/
+!Debug/glut*
+
+lib/*
+!lib/OpenGL32.lib
+!lib/glut32.lib
+
+
